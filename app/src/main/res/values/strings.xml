@@ -1,0 +1,1071 @@
+<resources>
+    <string name="app_name">PrivSet</string>
+    <string name="admob_app_id">ADMOB_APP_ID</string>
+    <string name="interstitial_ad_unit_id">INTERSTITIAL_AD_ID</string>
+    <string name="banner_ad_unit_id">BANNER_AD_ID1</string>
+    <string name="banner_ad_unit_id2">BANNER_AD_ID2</string>
+
+<string name="config_freeformWindowManagement">
+ The device supports freeform window management. Windows have title bars and can be moved
+         and resized. If you set this to true, you also need to add
+         PackageManager.FEATURE_FREEFORM_WINDOW_MANAGEMENT feature to your device specification.
+         The duplication is necessary, because this information is used before the features are
+         available to the system.
+</string>
+<string name="config_backPanicBehavior">
+ Control the behavior when the user panic presses the back button.
+   0 - Nothing
+   1 - Go to home
+</string>
+<string name="config_supportsMultiWindow">
+ True if the device supports at least one form of multi-window.
+         E.g. freeform, split-screen, picture-in-picture.
+</string>
+<string name="config_useRoundIcon">
+ Flag indicating whether round icons should be parsed from the application manifest.
+</string>
+<string name="config_supportSystemNavigationKeys">
+ True if the device supports system navigation keys.
+</string>
+<string name="config_sf_limitedAlpha">
+ Flag indicating whether the surface flinger has limited
+         alpha compositing functionality in hardware.  If set, the window
+         manager will disable alpha trasformation in animations where not
+         strictly needed
+</string>
+<string name="ImsConnectedDefaultValue">
+ Default value used to block data calls if ims is not
+         connected.  If you use the ims apn DCT will block
+         any other apn from connecting until ims apn is connected
+</string>
+<string name="config_sf_slowBlur">
+ Flag indicating whether the surface flinger is inefficient
+         at performing a blur.  Used by parts of the UI to turn off
+         the blur effect where it isn\'t worth the performance hit.
+         As of Honeycomb, blurring is not supported anymore.
+</string>
+<string name="config_useVolumeKeySounds">
+ Flag indicating that the media framework should support playing of sounds on volume
+         key usage.  This adds noticeable additional overhead to volume key processing, so
+         is disableable for products for which it is irrelevant.
+</string>
+<string name="config_soundEffectVolumeDb">
+ The attenuation in dB applied to the sound effects played
+         through AudioManager.playSoundEffect() when no volume is specified.
+</string>
+<string name="config_lockSoundVolumeDb">
+ The attenuation in dB applied to the lock/unlock sounds.
+</string>
+<string name="config_sendAudioBecomingNoisy">
+ Flag indicating whether the AUDIO_BECOMING_NOISY notification should
+         be sent during a change to the audio output device.
+</string>
+<string name="config_shortAnimTime">
+ The duration (in milliseconds) of a short animation.
+</string>
+<string name="config_mediumAnimTime">
+ The duration (in milliseconds) of a medium-length animation.
+</string>
+<string name="config_longAnimTime">
+ The duration (in milliseconds) of a long animation.
+</string>
+<string name="config_activityShortDur">
+ The duration (in milliseconds) of the activity open/close and fragment open/close animations.
+</string>
+    <string name="config_activityDefaultDur">
+ The duration (in milliseconds) of the activity open/close and fragment open/close animations.
+</string>
+<string name="config_ui_enableFadingMarquee">
+ Enables or disables fading edges when marquee is enabled in TextView.
+         Off by default, since the framebuffer readback used to implement the
+         fading edges is prohibitively expensive on most GPUs.
+</string>
+<string name="config_closeDialogWhenTouchOutside">
+ Whether dialogs should close automatically when the user touches outside
+         of them.  This should not normally be modified.
+</string>
+<string name="config_avoidGfxAccel">
+ Device configuration indicating whether we should avoid using accelerated graphics
+         in certain places to reduce RAM footprint.  This is ignored if ro.config.low_ram
+         is true (in that case this is assumed true as well).  It can allow you to tune down
+         your device\'s memory use without going to the point of causing applications to turn
+         off features.
+</string>
+<string name="config_lowMemoryKillerMinFreeKbytesAbsolute">
+ Device configuration setting the minfree tunable in the lowmemorykiller in the kernel.
+         A high value will cause the lowmemorykiller to fire earlier, keeping more memory
+         in the file cache and preventing I/O thrashing, but allowing fewer processes to
+         stay in memory.  A low value will keep more processes in memory but may cause
+         thrashing if set too low.  Overrides the default value chosen by ActivityManager
+         based on screen size and total memory for the largest lowmemorykiller bucket, and
+         scaled proportionally to the smaller buckets.  -1 keeps the default.
+</string>
+<string name="config_lowMemoryKillerMinFreeKbytesAdjust">
+ Device configuration adjusting the minfree tunable in the lowmemorykiller in the
+         kernel.  A high value will cause the lowmemorykiller to fire earlier, keeping more
+         memory in the file cache and preventing I/O thrashing, but allowing fewer processes
+         to stay in memory.  A low value will keep more processes in memory but may cause
+         thrashing if set too low.  Directly added to the default value chosen by
+         ActivityManager based on screen size and total memory for the largest lowmemorykiller
+         bucket, and scaled proportionally to the smaller buckets. 0 keeps the default.
+</string>
+<string name="config_extraFreeKbytesAbsolute">
+ Device configuration setting the /proc/sys/vm/extra_free_kbytes tunable in the kernel
+         (if it exists).  A high value will increase the amount of memory that the kernel
+         tries to keep free, reducing allocation time and causing the lowmemorykiller to kill
+         earlier.  A low value allows more memory to be used by processes but may cause more
+         allocations to block waiting on disk I/O or lowmemorykiller.  Overrides the default
+         value chosen by ActivityManager based on screen size.  0 prevents keeping any extra
+         memory over what the kernel keeps by default.  -1 keeps the default.
+</string>
+<string name="config_extraFreeKbytesAdjust">
+ Device configuration adjusting the /proc/sys/vm/extra_free_kbytes tunable in the kernel
+         (if it exists).  0 uses the default value chosen by ActivityManager.  A positive value
+         will increase the amount of memory that the kernel tries to keep free, reducing
+         allocation time and causing the lowmemorykiller to kill earlier.  A negative value
+         allows more memory to be used by processes but may cause more allocations to block
+         waiting on disk I/O or lowmemorykiller.  Directly added to the default value chosen by
+         ActivityManager based on screen size.
+</string>
+<string name="config_enableAutoPowerModes">
+ Set this to true to enable the platform\'s auto-power-save modes like doze and
+         app standby.  These are not enabled by default because they require a standard
+         cloud-to-device messaging service for apps to interact correctly with the modes
+         (such as to be able to deliver an instant message to the device even when it is
+         dozing).  This should be enabled if you have such services and expect apps to
+         correctly use them when installed on your device.  Otherwise, keep this disabled
+         so that applications can still use their own mechanisms.
+</string>
+<string name="config_radioScanningTimeout">
+ The duration (in milliseconds) that the radio will scan for a signal
+         when there\'s no network connection. If the scan doesn\'t timeout, use zero
+</string>
+<string name="config_networkTransitionTimeout">
+ The maximum duration (in milliseconds) we expect a network transition to take
+</string>
+<string name="config_automatic_brightness_available">
+ Flag indicating whether the we should enable the automatic brightness in Settings.
+         Software implementation will be used if config_hardware_auto_brightness_available is not set
+</string>
+<string name="config_annoy_dianne">
+ Don\'t name config resources like this.  It should look like config_annoyDianne
+</string>
+<string name="config_unplugTurnsOnScreen">
+ If this is true, the screen will come on when you unplug usb/power/whatever.
+</string>
+<string name="config_useAttentionLight">
+ Set this true only if the device has separate attention and notification lights.
+</string>
+<string name="config_animateScreenLights">
+ If this is true, the screen will fade off.
+</string>
+<string name="config_enableScreenshotChord">
+ If this is true, key chords can be used to take a screenshot on the device.
+</string>
+<string name="config_allowTheaterModeWakeFromUnplug">
+ If this is true, allow wake from theater mode when plugged in or unplugged.
+</string>
+<string name="config_allowTheaterModeWakeFromGesture">
+ If this is true, allow wake from theater mode from gesture.
+</string>
+<string name="config_allowTheaterModeWakeFromCameraLens">
+ If this is true, allow wake from theater mode from camera lens cover is switched.
+</string>
+<string name="config_allowTheaterModeWakeFromPowerKey">
+ If this is true, allow wake from theater mode from power key press.
+</string>
+<string name="config_allowTheaterModeWakeFromKey">
+ If this is true, allow wake from theater mode from regular key press. Setting this value to
+         true implies config_allowTheaterModeWakeFromPowerKey is also true
+</string>
+<string name="config_allowTheaterModeWakeFromMotion">
+ If this is true, allow wake from theater mode from motion.
+</string>
+<string name="config_allowTheaterModeWakeFromMotionWhenNotDreaming">
+ If this is true, allow wake from theater mode from motion.
+</string>
+<string name="config_allowTheaterModeWakeFromLidSwitch">
+ If this is true, allow wake from theater mode from lid switch.
+</string>
+<string name="config_allowTheaterModeWakeFromDock">
+ If this is true, allow wake from theater mode when docked.
+</string>
+<string name="config_allowTheaterModeWakeFromWindowLayout">
+ If this is true, allow wake from theater mode from window layout flag.
+</string>
+<string name="config_goToSleepOnButtonPressTheaterMode">
+ If this is true, go to sleep when theater mode is enabled from button press
+</string>
+<string name="config_supportLongPressPowerWhenNonInteractive">
+ If this is true, long press on power button will be available from the non-interactive state
+</string>
+<string name="config_supportAutoRotation">
+ If true, enables auto-rotation features using the accelerometer.
+         Otherwise, auto-rotation is disabled.  Applications may still request
+         to use specific orientations but the sensor is ignored and sensor-based
+         orientations are not available.  Furthermore, all auto-rotation related
+         settings are omitted from the system UI.  In certain situations we may
+         still use the accelerometer to determine the orientation, such as when
+         docked if the dock is configured to enable the accelerometer.
+</string>
+<string name="config_allowAllRotations">
+ If true, the screen can be rotated via the accelerometer in all 4
+         rotations as the default behavior.
+</string>
+<string name="config_reverseDefaultRotation">
+ If true, the direction rotation is applied to get to an application\'s requested
+         orientation is reversed.  Normally, the model is that landscape is
+         clockwise from portrait; thus on a portrait device an app requesting
+         landscape will cause a clockwise rotation, and on a landscape device an
+         app requesting portrait will cause a counter-clockwise rotation.  Setting
+         true here reverses that logic.
+</string>
+<string name="config_lidOpenRotation">
+ The number of degrees to rotate the display when the keyboard is open.
+         A value of -1 means no change in orientation by default.
+</string>
+<string name="config_lidKeyboardAccessibility">
+ Indicate whether the lid state impacts the accessibility of
+         the physical keyboard.  0 means it doesn\'t, 1 means it is accessible
+         when the lid is open, 2 means it is accessible when the lid is
+         closed.  The default is 0.
+</string>
+<string name="config_lidNavigationAccessibility">
+ Indicate whether the lid state impacts the accessibility of
+         the navigation buttons.  0 means it doesn\'t, 1 means it is accessible
+         when the lid is open, 2 means it is accessible when the lid is
+         closed.  The default is 0.
+</string>
+<string name="config_lidControlsSleep">
+ Indicate whether closing the lid causes the device to go to sleep and opening
+         it causes the device to wake up.
+         The default is false.
+</string>
+<string name="config_deskDockRotation">
+ The number of degrees to rotate the display when the device is in a desk dock.
+         A value of -1 means no change in orientation by default.
+</string>
+<string name="config_deskDockKeepsScreenOn">
+ Control whether being in the desk dock (and powered) always
+         keeps the screen on.  By default it stays on when plugged in to
+         AC.  0 will not keep it on; or together 1 to stay on when plugged
+         in to AC and 2 to stay on when plugged in to USB.  (So 3 for both.)
+</string>
+<string name="config_deskDockEnablesAccelerometer">
+ Control whether being in the desk dock should enable accelerometer
+         based screen orientation.  This defaults to true because it is
+         common for desk docks to be sold in a variety of form factors
+         with different orientations.  Since we cannot always tell these docks
+         apart and the docks cannot report their true orientation on their own,
+         we rely on gravity to determine the effective orientation.
+</string>
+<string name="config_carDockRotation">
+ The number of degrees to rotate the display when the device is in a car dock.
+         A value of -1 means no change in orientation by default.
+</string>
+<string name="config_carDockKeepsScreenOn">
+ Control whether being in the car dock (and powered) always
+         keeps the screen on.  By default it stays on when plugged in to
+         AC.  0 will not keep it on; or together 1 to stay on when plugged
+         in to AC and 2 to stay on when plugged in to USB.  (So 3 for both.)
+</string>
+<string name="config_carDockEnablesAccelerometer">
+ Control whether being in the car dock should enable accelerometer based
+         screen orientation.  This defaults to true because putting a device in
+         a car dock make the accelerometer more a physical input (like a lid).
+</string>
+<string name="config_undockedHdmiRotation">
+ The number of degrees to rotate the display when the device has HDMI connected
+         but is not in a dock.  A value of -1 means no change in orientation by default.
+         Use -1 except on older devices whose Hardware Composer HAL does not
+         provide full support for multiple displays.
+</string>
+<string name="config_defaultUiModeType">
+ Control the default UI mode type to use when there is no other type override
+         happening.  One of the following values (See Configuration.java):
+             1  UI_MODE_TYPE_NORMAL
+             4  UI_MODE_TYPE_TELEVISION
+             5  UI_MODE_TYPE_APPLIANCE
+             6  UI_MODE_TYPE_WATCH
+         Any other values will have surprising consequences.
+</string>
+<string name="config_defaultNightMode">
+ Control the default night mode to use when there is no other mode override set.
+         One of the following values (see UiModeManager.java):
+             0 - MODE_NIGHT_AUTO
+             1 - MODE_NIGHT_NO
+             2 - MODE_NIGHT_YES
+</string>
+<string name="config_suspendWhenScreenOffDueToProximity">
+ Indicate whether to allow the device to suspend when the screen is off
+         due to the proximity sensor.  This resource should only be set to true
+         if the sensor HAL correctly handles the proximity sensor as a wake-up source.
+         Otherwise, the device may fail to wake out of suspend reliably.
+         The default is false.
+</string>
+<string name="config_longPressOnBackBehavior">
+ Control the behavior when the user long presses the back button.  Non-zero values are only
+         valid for watches as part of CDD/CTS.
+            0 - Nothing
+            1 - Go to voice assist
+</string>
+<string name="config_longPressOnPowerBehavior">
+ Control the behavior when the user long presses the power button.
+            0 - Nothing
+            1 - Global actions menu
+            2 - Power off (with confirmation)
+            3 - Power off (without confirmation)
+</string>
+<string name="config_shortPressOnPowerBehavior">
+ Control the behavior when the user short presses the power button.
+            0 - Nothing
+            1 - Go to sleep (doze)
+            2 - Really go to sleep (don\'t doze)
+            3 - Really go to sleep and go home (don\'t doze)
+</string>
+<string name="config_doublePressOnPowerBehavior">
+ Control the behavior when the user double presses the power button.
+            0 - Nothing
+            1 - Toggle theater mode setting
+            2 - Brightness boost
+</string>
+<string name="config_triplePressOnPowerBehavior">
+ Control the behavior when the user triple presses the power button.
+            0 - Nothing
+            1 - Toggle theater mode setting
+            2 - Brightness boost
+</string>
+<string name="config_shortPressOnSleepBehavior">
+ Control the behavior when the user presses the sleep button.
+            0 - Go to sleep (doze)
+            1 - Go to sleep (doze) and go home
+</string>
+<string name="config_batterySdCardAccessibility">
+ Indicate whether the SD card is accessible without removing the battery.
+</string>
+    <string name="config_use_strict_phone_number_comparation">
+
+</string>
+<string name="config_criticalBatteryWarningLevel">
+ Display low battery warning when battery level dips to this value.
+         Also, the battery stats are flushed to disk when we hit this level.
+</string>
+<string name="config_shutdownBatteryTemperature">
+ Shutdown if the battery temperature exceeds (this value * 0.1) Celsius.
+</string>
+<string name="config_lowBatteryWarningLevel">
+ Display low battery warning when battery level dips to this value
+</string>
+<string name="config_lowBatteryCloseWarningBump">
+ Close low battery warning when battery level reaches the lowBatteryWarningLevel
+         plus this
+</string>
+<string name="config_defaultNotificationColor">
+ Default color for notification LED.
+</string>
+<string name="config_defaultNotificationLedOn">
+ Default LED on time for notification LED in milliseconds.
+</string>
+<string name="config_defaultNotificationLedOff">
+ Default LED off time for notification LED in milliseconds.
+</string>
+<string name="config_notificationsBatteryLowARGB">
+ Default value for led color when battery is low on charge
+</string>
+<string name="config_notificationsBatteryMediumARGB">
+ Default value for led color when battery is medium charged
+</string>
+<string name="config_notificationsBatteryFullARGB">
+ Default value for led color when battery is fully charged
+</string>
+<string name="config_notificationsBatteryLedOn">
+ Default value for LED on time when the battery is low on charge in miliseconds
+</string>
+<string name="config_intrusiveNotificationLed">
+ Is the notification LED intrusive? Used to decide if there should be a disable option
+</string>
+<string name="config_notificationsBatteryLedOff">
+ Default value for LED off time when the battery is low on charge in miliseconds
+</string>
+<string name="config_notificationServiceArchiveSize">
+ Number of notifications to keep in the notification service historical archive
+</string>
+<string name="config_disableMenuKeyInLockScreen">
+ Allow the menu hard key to be disabled in LockScreen on some devices
+</string>
+<string name="config_enableLockBeforeUnlockScreen">
+ Don\'t show lock screen before unlock screen (PIN/pattern/password)
+</string>
+<string name="config_enableLockScreenRotation">
+ Disable lockscreen rotation by default
+</string>
+<string name="config_enableLockScreenTranslucentDecor">
+ Enable lockscreen translucent decor by default
+</string>
+<string name="config_enableTranslucentDecor">
+ Enable translucent decor by default
+</string>
+<string name="config_hotswapCapable">
+ Is the device capable of hot swapping an UICC Card
+</string>
+<string name="config_enable_puk_unlock_screen">
+ Enable puk unlockscreen by default.
+         If unlock screen is disabled, the puk should be unlocked through Emergency Dialer
+</string>
+<string name="config_enable_emergency_call_while_sim_locked">
+ Enable emergency call when sim is locked or puk locked. Some countries/carriers do not
+         allow emergency calls to be placed without the IMSI, which is locked in the SIM.
+         If so, this should be set to \'false\' in an overlay.
+</string>
+<string name="config_longPressOnHomeBehavior">
+ Control the behavior when the user long presses the home button.
+            0 - Nothing
+            1 - Recent apps view in SystemUI
+            2 - Launch assist intent
+         This needs to match the constants in
+         policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
+</string>
+<string name="config_doubleTapOnHomeBehavior">
+ Control the behavior when the user double-taps the home button.
+            0 - Nothing
+            1 - Recent apps view in SystemUI
+         This needs to match the constants in
+         policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
+</string>
+<string name="config_screenBrightnessSettingMinimum">
+ Minimum screen brightness setting allowed by the power manager.
+         The user is forbidden from setting the brightness below this level.
+</string>
+<string name="config_screenBrightnessSettingMaximum">
+ Maximum screen brightness allowed by the power manager.
+         The user is forbidden from setting the brightness above this level.
+</string>
+<string name="config_screenBrightnessSettingDefault">
+ Default screen brightness setting.
+         Must be in the range specified by minimum and maximum.
+</string>
+<string name="config_screenBrightnessDoze">
+ Screen brightness used to dim the screen while dozing in a very low power state.
+         May be less than the minimum allowed brightness setting
+         that can be set by the user.
+</string>
+<string name="config_allowAutoBrightnessWhileDozing">
+ Allow automatic adjusting of the screen brightness while dozing in low power state.
+</string>
+<string name="config_autoBrightnessBrighteningLightDebounce">
+ Stability requirements in milliseconds for accepting a new brightness level.  This is used
+         for debouncing the light sensor.  Different constants are used to debounce the light sensor
+         when adapting to brighter or darker environments.  This parameter controls how quickly
+         brightness changes occur in response to an observed change in light level that exceeds the
+         hysteresis threshold.
+</string>
+    <string name="config_autoBrightnessDarkeningLightDebounce">
+
+</string>
+<string name="config_autoBrightnessLightSensorRate">
+ Light sensor event rate in milliseconds for automatic brightness control.
+</string>
+<string name="config_autoBrightnessResetAmbientLuxAfterWarmUp">
+ When the screen is turned on, the previous estimate of the ambient light level at the time
+         the screen was turned off is restored and is used to determine the initial screen
+         brightness.
+         If this flag is true, then the ambient light level estimate will be promptly recomputed
+         after the warm-up interface and the screen brightness will be adjusted immediately.
+         If this flag is false, then the ambient light level estimate will be adjusted more
+         gradually in the same manner that normally happens when the screen is on according to the
+         brightening or dimming debounce thresholds.  As a result, it may take somewhat longer to
+         adapt to the environment.  This mode may be better suited for watches.
+</string>
+<string name="config_screenBrightnessDim">
+ Screen brightness used to dim the screen when the user activity
+         timeout expires.  May be less than the minimum allowed brightness setting
+         that can be set by the user.
+</string>
+<string name="config_screenBrightnessDark">
+ Minimum allowable screen brightness to use in a very dark room.
+         This value sets the floor for the darkest possible auto-brightness
+         adjustment.  It is expected to be somewhat less than the first entry in
+         config_autoBrightnessLcdBacklightValues so as to allow the user to have
+         some range of adjustment to dim the screen further than usual in very
+         dark rooms. The contents of the screen must still be clearly visible
+         in darkness (although they may not be visible in a bright room).
+</string>
+<string name="config_lightSensorWarmupTime">
+ Amount of time it takes for the light sensor to warm up in milliseconds.
+         For this time after the screen turns on, the Power Manager
+         will not debounce light sensor readings
+</string>
+<string name="config_swipeDisambiguation">
+ Enables swipe versus poly-finger touch disambiguation in the KeyboardView
+</string>
+<string name="config_virtualKeyQuietTimeMillis">
+ Specifies the amount of time to disable virtual keys after the screen is touched
+         in order to filter out accidental virtual key presses due to swiping gestures
+         or taps near the edge of the display.  May be 0 to disable the feature.
+         It is recommended that this value be no more than 250 ms.
+         This feature should be disabled for most devices.
+</string>
+<string name="config_enableWallpaperService">
+ True if WallpaperService is enabled
+</string>
+<string name="config_bluetooth_sco_off_call">
+ Boolean indicating if current platform supports bluetooth SCO for off call
+    use cases
+</string>
+<string name="config_bluetooth_wide_band_speech">
+ Boolean indicating if current platform supports bluetooth wide band
+         speech
+</string>
+<string name="config_bluetooth_address_validation">
+ Boolean indicating if current platform need do one-time bluetooth address
+         re-validation
+</string>
+<string name="config_bluetooth_le_peripheral_mode_supported">
+ Boolean indicating if current platform supports BLE peripheral mode
+</string>
+<string name="config_datause_polling_period_sec">
+ The default data-use polling period.
+</string>
+<string name="config_datause_threshold_bytes">
+ The default data-use threshold in bytes. 0 disables
+</string>
+<string name="config_datause_throttle_kbitsps">
+ The default reduced-datarate value in kilobits per sec
+</string>
+<string name="config_datause_notification_type">
+ 2 means give warning
+</string>
+<string name="config_volte_replacement_rat">
+ If Voice Radio Technology is RIL_RADIO_TECHNOLOGY_LTE:14 or
+         RIL_RADIO_TECHNOLOGY_UNKNOWN:0 this is the value that should be used instead.
+         A configuration value of RIL_RADIO_TECHNOLOGY_UNKNOWN:0 means
+         there is no replacement value and that the default assumption
+         for phone type (GSM) should be used.
+</string>
+<string name="config_voice_capable">
+ Flag indicating whether the current device is "voice capable".
+         If true, this means that the device supports circuit-switched
+         (i.e. voice) phone calls over the telephony network, and is
+         allowed to display the in-call UI while a cellular voice call is
+         active.  This can be overridden to false for "data only" devices
+         which can\'t make voice calls and don\'t support any in-call UI.
+         Note: this flag is subtly different from the
+         PackageManager.FEATURE_TELEPHONY system feature, which is
+         available on *any* device with a telephony radio, even if the
+         device is data-only.
+</string>
+<string name="config_user_notification_of_restrictied_mobile_access">
+ Flag indicating if the user is notified when the mobile network access is restricted
+</string>
+<string name="config_sms_capable">
+ Flag indicating whether the current device allows sms service.
+         If true, this means that the device supports both sending and
+         receiving sms via the telephony network.
+         This can be overridden to false for "data only" devices
+         which can\'t send and receive sms message.
+         Note: Disable SMS also disable voicemail waiting sms,
+               cell broadcasting sms, and MMS.
+</string>
+<string name="config_bluetooth_default_profiles">
+ Enable/disable default bluetooth profiles:
+        HSP_AG, ObexObjectPush, Audio, NAP
+</string>
+<string name="config_sip_wifi_only">
+ Enables SIP on WIFI only
+</string>
+<string name="config_built_in_sip_phone">
+ Enables built-in SIP phone capability
+</string>
+<string name="db_connection_pool_size">
+ Maximum number of database connections opened and managed by framework layer
+         to handle queries on each database when using Write-Ahead Logging.
+</string>
+<string name="db_journal_size_limit">
+ Maximum size of the persistent journal file in bytes.
+         If the journal file grows to be larger than this amount then SQLite will
+         truncate it after committing the transaction.
+</string>
+<string name="db_wal_autocheckpoint">
+ The Write-Ahead Log auto-checkpoint interval in database pages (typically 1 to 4KB).
+         The log is checkpointed automatically whenever it exceeds this many pages.
+         When a database is reopened, its journal mode is set back to the default
+         journal mode, which may cause a checkpoint operation to occur.  Checkpoints
+         can also happen at other times when transactions are committed.
+         The bigger the WAL file, the longer a checkpoint operation takes, so we try
+         to keep the WAL file relatively small to avoid long delays.
+         The size of the WAL file is also constrained by \'db_journal_size_limit\'.
+</string>
+<string name="config_downloadDataDirSize">
+ Max space (in MB) allocated to DownloadManager to store the downloaded
+         files if they are to be stored in DownloadManager\'s data dir,
+         which typically is /data/data/com.android.providers.downloads/files
+</string>
+<string name="config_MaxConcurrentDownloadsAllowed">
+ Max number of downloads allowed to proceed concurrently
+</string>
+<string name="config_downloadDataDirLowSpaceThreshold">
+ When the free space available in DownloadManager\'s data dir falls
+         below the percentage value specified by this param, DownloadManager
+         starts removing files to try to make percentage of available
+         free space above this threshold value.
+</string>
+<string name="config_cursorWindowSize">
+ When a database query is executed, the results retuned are paginated
+         in pages of size (in KB) indicated by this value
+</string>
+<string name="config_showMenuShortcutsWhenKeyboardPresent">
+ Sets whether menu shortcuts should be displayed on panel menus when
+         a keyboard is present.
+</string>
+<string name="config_telephony_use_own_number_for_voicemail">
+ The VoiceMail default value is displayed to my own number if it is true
+</string>
+<string name="config_sms_utf8_support">
+ If this value is true, Sms encoded as octet is decoded by utf8 decoder.
+         If false, decoded by Latin decoder.
+</string>
+<string name="config_mms_content_disposition_support">
+ If this value is true, The mms content-disposition field is supported correctly.
+         If false, Content-disposition fragments are ignored
+</string>
+<string name="config_alwaysUseCdmaRssi">
+ Set to true if the RSSI should always display CDMA signal strength even on EVDO
+</string>
+<string name="config_duplicate_port_omadm_wappush">
+ If this value is true, duplicate Source/Destination port fields
+         in WDP header of some carriers OMADM wap push are supported.
+         ex: MSGTYPE-TotalSegments-CurrentSegment
+             -SourcePortDestPort-SourcePortDestPort-OMADM PDU
+         If false, not supported.
+</string>
+<string name="status_bar_notification_info_maxnum">
+ Maximum numerical value that will be shown in a status bar
+         notification icon or in the notification itself. Will be replaced
+         with @string/status_bar_notification_info_overflow when shown in the
+         UI.
+</string>
+<string name="config_showNavigationBar">
+ Whether a software navigation bar should be shown. NOTE: in the future this may be
+         autodetected from the Configuration.
+</string>
+<string name="config_actionMenuItemAllCaps">
+ Whether action menu items should be displayed in ALLCAPS or not.
+         Defaults to true. If this is not appropriate for specific locales
+         it should be disabled in that locale\'s resources.
+</string>
+<string name="config_allowActionMenuItemTextWithIcon">
+ Whether action menu items should obey the "withText" showAsAction
+         flag. This may be set to false for situations where space is
+         extremely limited.
+</string>
+<string name="config_ntpPollingInterval">
+ Normal polling frequency in milliseconds
+</string>
+<string name="config_ntpPollingIntervalShorter">
+ Try-again polling interval in milliseconds, in case the network request failed
+</string>
+<string name="config_ntpRetry">
+ Number of times to try again with the shorter interval, before backing
+         off until the normal polling interval. A value 0 indicates infinite.
+</string>
+<string name="config_ntpThreshold">
+ If the time difference is greater than this threshold in milliseconds,
+         then update the time.
+</string>
+<string name="config_ntpTimeout">
+ Timeout to wait for NTP server response.
+</string>
+<string name="config_networkPolicyDefaultWarning">
+ Default network policy warning threshold, in megabytes.
+</string>
+<string name="config_wimaxEnabled">
+ Set and Unsets WiMAX
+</string>
+<string name="config_dreamsSupported">
+ Specifies whether the dreams feature should be supported.
+         When true, the system will allow the user to configure dreams (screensavers)
+         to launch when a user activity timeout occurs or the system is told to nap.
+         When false, the dreams feature will be disabled (this does not affect dozing).
+         Consider setting this resource to false or disabling dreams by default when a
+         doze component is specified below since dreaming will supercede dozing and
+         will prevent the system from entering a low power state until the dream ends.
+</string>
+<string name="config_dreamsEnabledByDefault">
+ If supported, are dreams enabled? (by default)
+</string>
+<string name="config_dreamsActivatedOnDockByDefault">
+ If supported and enabled, are dreams activated when docked? (by default)
+</string>
+<string name="config_dreamsActivatedOnSleepByDefault">
+ If supported and enabled, are dreams activated when asleep and charging? (by default)
+</string>
+<string name="config_dreamsEnabledOnBattery">
+ Are we allowed to dream while not plugged in?
+</string>
+<string name="config_dreamsBatteryLevelMinimumWhenPowered">
+ Minimum battery level to allow dreaming when powered.
+         Use -1 to disable this safety feature.
+</string>
+<string name="config_dreamsBatteryLevelMinimumWhenNotPowered">
+ Minimum battery level to allow dreaming when not powered.
+         Use -1 to disable this safety feature.
+</string>
+<string name="config_dreamsBatteryLevelDrainCutoff">
+ If the battery level drops by this percentage and the user activity timeout
+         has expired, then assume the device is receiving insufficient current to charge
+         effectively and terminate the dream.  Use -1 to disable this safety feature.
+</string>
+<string name="config_dozeAfterScreenOff">
+ If true, the doze component is not started until after the screen has been
+         turned off and the screen off animation has been performed.
+</string>
+<string name="config_powerDecoupleAutoSuspendModeFromDisplay">
+ Power Management: Specifies whether to decouple the auto-suspend state of the
+         device from the display on/off state.
+         When false, autosuspend_disable() will be called before the display is turned on
+         and autosuspend_enable() will be called after the display is turned off.
+         This mode provides best compatibility for devices using legacy power management
+         features such as early suspend / late resume.
+         When true, autosuspend_display() and autosuspend_enable() will be called
+         independently of whether the display is being turned on or off.  This mode
+         enables the power manager to suspend the application processor while the
+         display is on.
+         This resource should be set to "true" when a doze component has been specified
+         to maximize power savings but not all devices support it.
+         Refer to autosuspend.h for details.
+</string>
+<string name="config_powerDecoupleInteractiveModeFromDisplay">
+ Power Management: Specifies whether to decouple the interactive state of the
+         device from the display on/off state.
+         When false, setInteractive(…, true) will be called before the display is turned on
+         and setInteractive(…, false) will be called after the display is turned off.
+         This mode provides best compatibility for devices that expect the interactive
+         state to be tied to the display state.
+         When true, setInteractive(…) will be called independently of whether the display
+         is being turned on or off.  This mode enables the power manager to reduce
+         clocks and disable the touch controller while the display is on.
+         This resource should be set to "true" when a doze component has been specified
+         to maximize power savings but not all devices support it.
+         Refer to power.h for details.
+</string>
+<string name="config_minimumScreenOffTimeout">
+ User activity timeout: Minimum screen off timeout in milliseconds.
+         Sets a lower bound for the {@link Settings.System#SCREEN_OFF_TIMEOUT} setting
+         which determines how soon the device will go to sleep when there is no
+         user activity.
+         This value must be greater than zero, otherwise the device will immediately
+         fall asleep again as soon as it is awoken.
+</string>
+<string name="config_maximumScreenDimDuration">
+ User activity timeout: Maximum screen dim duration in milliseconds.
+         Sets an upper bound for how long the screen will dim before the device goes
+         to sleep when there is no user activity.  The dim duration is subtracted from
+         the overall screen off timeout to determine the screen dim timeout.
+         When the screen dim timeout expires, the screen will dim, shortly thereafter
+         the device will go to sleep.
+         If the screen off timeout is very short, the dim duration may be reduced
+         proportionally.  See config_maximumScreenDimRatio.
+         This value may be zero in which case the screen will not dim before the
+         device goes to sleep.
+</string>
+<string name="config_globalActionsKeyTimeout">
+ Amount of time in ms the user needs to press the relevant key to bring up the global actions dialog
+</string>
+<string name="config_maxResolverActivityColumns">
+ Maximum number of grid columns permitted in the ResolverActivity
+         used for picking activities to handle an intent.
+</string>
+<string name="config_cellBroadcastAppLinks">
+ Set to true to add links to Cell Broadcast app from Settings and MMS app.
+</string>
+<string name="config_syncstorageengine_masterSyncAutomatically">
+ The default value if the SyncStorageEngine should sync automatically or not
+</string>
+<string name="config_multiuserMaximumUsers">
+  Maximum number of supported users
+</string>
+<string name="config_enableMultiUserUI">
+ Whether UI for multi user should be shown
+</string>
+<string name="config_disableUsbPermissionDialogs">
+ If true, then we do not ask user for permission for apps to connect to USB devices.
+         Do not set this to true for production devices. Doing so will cause you to fail CTS.
+</string>
+<string name="config_safe_media_volume_index">
+ Safe headphone volume index. When music stream volume is below this index
+    the SPL on headphone output is compliant to EN 60950 requirements for portable music
+    players.
+</string>
+<string name="config_mobile_mtu">
+ Configure mobile network MTU. The standard default is set here but each carrier
+         may have a specific value set in an overlay config.xml file.
+</string>
+<string name="config_enableWifiDisplay">
+ Whether WiFi display is supported by this device.
+         There are many prerequisites for this feature to work correctly.
+         Here are a few of them:
+         * The WiFi radio must support WiFi P2P.
+         * The WiFi radio must support concurrent connections to the WiFi display and
+           to an access point.
+         * The Audio Flinger audio_policy.conf file must specify a rule for the "r_submix"
+           remote submix module.  This module is used to record and stream system
+           audio output to the WiFi display encoder in the media server.
+         * The remote submix module "audio.r_submix.default" must be installed on the device.
+         * The device must be provisioned with HDCP keys (for protected content).
+</string>
+<string name="config_useDevInputEventForAudioJack">
+ When true use the linux /dev/input/event subsystem to detect the switch changes
+         on the headphone/microphone jack. When false use the older uevent framework.
+</string>
+<string name="config_safe_media_volume_enabled">
+ Whether safe headphone volume is enabled or not (country specific).
+</string>
+<string name="config_wifiDisplaySupportsProtectedBuffers">
+ Set to true if the wifi display supports compositing content stored
+         in gralloc protected buffers.  For this to be true, there must exist
+         a protected hardware path for surface flinger to composite and send
+         protected buffers to the wifi display video encoder.
+         If this flag is false, we advise applications not to use protected
+         buffers (if possible) when presenting content to a wifi display because
+         the content may be blanked.
+         This flag controls whether the {@link Display#FLAG_SUPPORTS_PROTECTED_BUFFERS}
+         flag is set for wifi displays.
+</string>
+<string name="config_camera_sound_forced">
+ Whether camera shutter sound is forced or not  (country specific).
+</string>
+<string name="config_dontPreferApn">
+ Set to true if we need to not prefer an APN.
+         This is being added to enable a simple scenario of pre-paid
+         provisioning on some carriers, working around a bug (7305641)
+         where if the preferred is used we don\'t try the others.
+</string>
+<string name="config_restartRadioAfterProvisioning">
+ Set to true if after a provisioning apn the radio should be restarted
+</string>
+<string name="config_requireRadioPowerOffOnSimRefreshReset">
+ Boolean indicating if RADIO POWER OFF is required on receiving SIM REFRESH with RESET.
+         This will be handled by modem if it is false.
+</string>
+<string name="config_speed_up_audio_on_mt_calls">
+ Flag indicating if the speed up audio on mt call code should be executed
+</string>
+<string name="config_customAdbPublicKeyConfirmationComponent">
+ Name of the activity or service that prompts the user to reject, accept, or whitelist
+         an adb host\'s public key, when an unwhitelisted host connects to the local adbd.
+         Can be customized for other product types
+</string>
+<string name="config_customAdbPublicKeyConfirmationSecondaryUserComponent">
+ Name of the activity that prompts the secondary user to acknowledge she/he needs to
+         switch to the primary user to enable USB debugging.
+         Can be customized for other product types
+</string>
+<string name="config_customVpnConfirmDialogComponent">
+ Name of the CustomDialog that is used for VPN
+</string>
+<string name="config_useFixedVolume">
+ Flag indicating that the media framework should not allow changes or mute on any
+         stream or master volumes.
+</string>
+<string name="config_forceDefaultOrientation">
+ Flag indicating that this device does not rotate and will always remain in its default
+         orientation. Activities that desire to run in a non-compatible orientation will be run
+         from an emulated display within the physical display.
+</string>
+<string name="config_toastDefaultGravity">
+ Default Gravity setting for the system Toast view. Equivalent to: Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM
+</string>
+<string name="config_stkNoAlphaUsrCnf">
+ set to false if we need to show user confirmation
+         when alpha identifier is not provided by the UICC
+</string>
+<string name="config_immersive_mode_confirmation_panic">
+ Threshold (in ms) under which a screen off / screen on will be considered a reset of the
+         immersive mode confirmation prompt.
+</string>
+<string name="config_valid_wappush_index">
+ For some operators, PDU has garbages. To fix it, need to use valid index
+</string>
+<string name="config_overrideHasPermanentMenuKey">
+ Override the default detection behavior for the framework method
+         android.view.ViewConfiguration#hasPermanentMenuKey().
+         Valid settings are:
+         0 - No change. Use the default autodetection behavior.
+         1 - The device DOES have a permanent menu key; ignore autodetection.
+         2 - The device DOES NOT have a permanent menu key; ignore autodetection.
+</string>
+<string name="config_hasPermanentDpad">
+ Override the DPad detection behavior for configuration purposes
+</string>
+<string name="config_windowIsRound">
+ default window inset isRound property
+</string>
+<string name="config_windowOutsetBottom">
+ Override this value if the device has a chin, i.e. area that is not actual part of the
+         screen but you would like to be treated as a real display. The value is the height of the
+         chin.
+</string>
+<string name="config_defaultNetworkScorerPackageName">
+ Package name for default network scorer app; overridden by product overlays.
+</string>
+<string name="config_hasRecents">
+ default device has recents property
+</string>
+<string name="config_windowShowCircularMask">
+ default window ShowCircularMask property
+</string>
+<string name="config_windowEnableCircularEmulatorDisplayOverlay">
+ default value for whether circular emulators (ro.emulator.circular)
+         should show a display overlay on the screen
+</string>
+<string name="config_drawLockTimeoutMillis">
+ Number of milliseconds to hold a wake lock to ensure that drawing is fully
+         flushed to the display while dozing.  This value needs to be large enough
+         to account for processing and rendering time plus a frame or two of latency
+         in the display pipeline plus some slack just to be sure.
+</string>
+<string name="skipHoldBeforeMerge">
+ Flag indicating apps will skip sending hold request before merge. In this case
+        IMS service implementation will do both.i.e.hold followed by merge.
+</string>
+<string name="useImsAlwaysForEmergencyCall">
+ Flag indicating emergency calls will always use IMS irrespective of the state of
+    the IMS connection
+</string>
+<string name="imsServiceAllowTurnOff">
+ Flag indicating whether the IMS service can be turned off. If false then
+        the service will not be turned-off completely (the ImsManager.turnOffIms() will
+        be disabled) but individual Features can be disabled using ImsConfig.setFeatureValue()
+</string>
+<string name="config_device_volte_available">
+ Flag specifying whether VoLTE is available on device
+</string>
+<string name="config_carrier_volte_available">
+ Flag specifying whether VoLTE should be available for carrier: independent of
+         carrier provisioning. If false: hard disabled. If true: then depends on carrier
+         provisioning, availability etc
+</string>
+<string name="config_carrier_volte_provisioned">
+ Flag specifying whether VoLTE availability is based on provisioning
+</string>
+<string name="config_carrier_volte_tty_supported">
+ Flag specifying whether VoLTE TTY is supported
+</string>
+<string name="config_device_vt_available">
+ Flag specifying whether VT is available on device
+</string>
+<string name="config_carrier_vt_available">
+ Flag specifying whether VT should be available for carrier: independent of
+         carrier provisioning. If false: hard disabled. If true: then depends on carrier
+         provisioning, availability etc
+</string>
+<string name="config_device_wfc_ims_available">
+ Flag specifying whether WFC over IMS is available on device
+</string>
+<string name="config_carrier_wfc_ims_available">
+ Flag specifying whether WFC over IMS should be available for carrier: independent of
+         carrier provisioning. If false: hard disabled. If true: then depends on carrier
+         provisioning, availability etc
+</string>
+    <string name="config_networkSamplingWakesDevice">
+
+</string>
+        <string name="config_auto_attach_data_on_creation">
+
+</string>
+<string name="config_switch_phone_on_voice_reg_state_change">
+ Config determines whether to update phone object when voice registration
+         state changes. Voice radio tech change will always trigger an update of
+         phone object irrespective of this config
+</string>
+    <string name="config_sms_force_7bit_encoding">
+
+</string>
+<string name="config_LTE_RSRP_threshold_type">
+ Flag indicating whether strict threshold is used, or lenient threshold is used,
+          when evaluating RSRP for LTE antenna bar display
+           0. Strict threshold
+           1. Lenient threshold
+</string>
+<string name="config_zen_repeat_callers_threshold">
+ Priority repeat caller threshold, in minutes
+</string>
+<string name="config_defaultWindowFeatureOptionsPanel">
+ Flags enabling default window features. See Window.java
+</string>
+    <string name="config_defaultWindowFeatureContextMenu">
+
+</string>
+        <string name="config_use_sim_language_file">
+
+</string>
+<string name="config_LTE_eri_for_network_name">
+ Use ERI text for network name on CDMA LTE
+</string>
+<string name="config_defaultInTouchMode">
+ Whether to start in touch mode
+</string>
+<string name="config_screen_magnification_multi_tap_adjustment">
+ Time adjustment, in milliseconds, applied to the default double tap threshold
+         used for gesture detection by the screen magnifier.
+</string>
+<string name="config_enableBurnInProtection">
+ If true, the display will be shifted around in ambient mode.
+</string>
+<string name="config_burnInProtectionMaxRadius">
+ Specifies the maximum burn-in offset displacement from the center. If -1, no maximum value
+         will be used.
+</string>
+<string name="config_burnInProtectionMinHorizontalOffset">
+ Specifies the minimum burn-in offset horizontally.
+</string>
+<string name="config_burnInProtectionMaxHorizontalOffset">
+ Specifies the maximum burn-in offset horizontally.
+</string>
+<string name="config_burnInProtectionMinVerticalOffset">
+ Specifies the minimum burn-in offset vertically.
+</string>
+<string name="config_burnInProtectionMaxVerticalOffset">
+ Specifies the maximum burn-in offset vertically.
+</string>
+<string name="config_fingerprintMaxTemplatesPerUser">
+ For performance and storage reasons, limit the number of fingerprints per user
+</string>
+<string name="config_allowAnimationsInLowPowerMode">
+ This config is ued to determine whether animations are allowed in low power mode.
+</string>
+<string name="config_supportDoubleTapWake">
+ Whether device supports double tap to wake
+</string>
+<string name="config_mainBuiltInDisplayIsRound">
+ Whether the main built-in display is round. This will affect
+         Configuration.screenLayout\'s SCREENLAYOUT_ROUND_MASK flags for Configurations on the
+         main built-in display. Change this in device-specific overlays.
+         Defaults to the older, deprecated config_windowIsRound already used in
+         some existing device-specific resource overlays.
+</string>
+<string name="config_supportMicNearUltrasound">
+ Whether the default microphone audio source supports near-ultrasound frequencies
+         (range of 18 - 21 kHz).
+</string>
+<string name="config_supportSpeakerNearUltrasound">
+ Whether the default speaker audio output path supports near-ultrasound frequencies
+         (range of 18 - 21 kHz).
+</string>
+<string name="config_eap_sim_based_auth_supported">
+ Flag indicating device support for EAP SIM, AKA, AKA\'
+</string>
+<string name="config_previousVibrationsDumpLimit">
+ How long history of previous vibrations should be kept for the dumpsys.
+</string>
+<string name="config_mdc_initial_max_retry">
+ Set initial MaxRetry value for operators
+</string>
+<string name="config_cameraLaunchGestureSensorType">
+ The OEM specified sensor type for the gesture to launch the camear app.
+</string>
+<string name="config_cameraDoubleTapPowerGestureEnabled">
+ Allow the gesture to double tap the power button twice to start the camera while the device
+         is non-interactive.
+</string>
+</resources>

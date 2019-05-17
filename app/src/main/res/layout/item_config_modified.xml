@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp">
+
+    <TextView
+        android:text="SFsDSFSDFSDF"
+        android:textColor="@color/colorChangedConfig"
+        android:id="@+id/titleTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:textStyle="bold"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:text="SFsDSFSDFSDF"
+        android:textColor="@color/colorTextGrey"
+        android:id="@+id/descriptionTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="12sp" />
+
+    <TextView
+        android:text="SFsDSFSDFSDF"
+        android:textColor="@android:color/white"
+        android:id="@+id/curValTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:textStyle="italic"
+        android:layout_marginBottom="8dp"
+        android:textSize="12sp" />
+
+    <TextView
+        android:text="SFsDSFSDFSDF"
+        android:textColor="@android:color/white"
+        android:id="@+id/defValTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:textStyle="italic"
+        android:layout_marginBottom="24dp"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/white" />
+</LinearLayout>

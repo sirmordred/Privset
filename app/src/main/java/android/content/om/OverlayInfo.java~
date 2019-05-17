@@ -1,0 +1,12 @@
+package com.mordred.omschecker;
+
+/**
+ * Created by mordred on 31.10.2017.
+ */
+
+public class RootJava {
+
+    public static void main(String[] args) {
+        System.out.println("OHHHMYYGOSHHHH my id is: " + android.os.Process.myUid());
+    }
+}
